@@ -32,62 +32,59 @@
 </head>
 
 <body>
-    <div id="com-chilipeppr-widget-template" class="panel panel-default">
-        <div class="panel-heading ">
-
-            <div class="btn-toolbar pull-right" role="toolbar">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-xs btn-default btn-sayhello" data-delay="1000" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Say Hello" data-content="Generate a hello message">Say Hello
-                    </button>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-xs btn-default hidebody"><span class="glyphicon glyphicon-chevron-up"></span>
-                    </button>
-                </div>
-                <div class="btn-group">
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
-                    </div>
-                </div>
-            </div> <span class="panel-title" data-toggle="popover">Template Widget</span> <span style="font-size:9px;" class="fb-build">v1</span>
-
+    <div id="com-chilipeppr-widget-editbootscript-body" class="panel-body">
+    <form role="form" >
+        <div class="form-group">
+            <div id="forking-panel" class="well hidden"></div>
+            <div class="alert alert-warning hidden"></div>
+            <label for="inputUrl">URL</label>
+            <table>
+                <tr>
+                    <td>http://chilipeppr.com/&nbsp;</td>
+                    <td>
+                        <input type="text" class="form-control" id="com-chilipeppr-widget-editbootscript-inputUrl" placeholder="Pick your URL" />
+                    </td>
+                </tr>
+            </table>
         </div>
-        <div class="panel-body">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="active"><a href="#com-chilipeppr-widget-template-tab1" role="tab" data-toggle="tab">Tab 1</a>
-                </li>
-                <li><a href="#com-chilipeppr-widget-template-tab2" role="tab" data-toggle="tab">Tab 2</a></li>
-                <li><a href="#com-chilipeppr-widget-template-tab3" role="tab" data-toggle="tab">Tab 3</a></li>
-            </ul>
-            <!-- Tab panes -->
-
-            <div class="tab-content">
-    
-                <!-- Tab 1 -->
-                <div class="tab-pane active" id="com-chilipeppr-widget-template-tab1">
-                    <p>This is the content of tab 1.</p>
-                    <div class="">
-                        <button type="button" class="btn btn-xs btn-default btn-helloworld2" style="margin: 4px 0;">Hello World 2</button>
-                    </div>
-                </div>
-
-                <!-- Tab 2 -->
-                <div class="tab-pane" id="com-chilipeppr-widget-template-tab2">
-                    <p>This is the content of tab 2.</p>
-                </div>
-
-                <!-- Tab 3 -->
-                <div class="tab-pane" id="com-chilipeppr-widget-template-tab3">
-                    <p>This is the content of tab 3.</p>
-                </div>
-
-            </div>
-
+        <div class="form-group">
+            <label for="com-chilipeppr-widget-editbootscript-inputScript">Base Boot Javascript</label>
+            <textarea id="com-chilipeppr-widget-editbootscript-inputScript" class="form-control" rows="5"></textarea>
         </div>
-    </div>
+        <div id="com-chilipeppr-widget-editbootscript-inputScriptExample" class="hidden">// Sample Base Boot Javascript
+// ----------------------
+// You should create a JSFiddle that loads your content 
+// by forking an existing workspace to get started. Then 
+// you can also fork any widgets, elements, or other 
+// JSFiddles that you need to modify so that others can 
+// benefit from your modifications.
+            
+// The chilipeppr.load() method is used to load a 
+// JSFiddle and inject it's HTML (inluding its 
+// CSS/Javascript) into a DOM element. The first 
+// parament must be the HTML ID of the DOM element.
+chilipeppr.load("pnlWorkspace",
+     // Edit URL below to your JSFiddle
+    "http://fiddle.jshell.net/myfiddlenuser/n3DLs/show/light/", function() {
+		
+        console.log("My workspace done loading.");
+            
+        // This is an example of publishing to the flash message 
+        // feature that is loaded by the root panel. Chilipeppr 
+        // Hardware Fiddle recommends you loosely couple your 
+        // widgets/elements by using the pubsub calls built 
+        // into the top-level chilipeppr object.
+        // Parameters: pubsub-channel (string), title (string), body (string)
+        chilipeppr.publish("/com-chilipeppr-elem-flashmsg/flashmsg", "My Workspace Loaded", "I just loaded my workspace.");
+            
+        // You can run other code here once your workspace is loaded
+        // however it's more likely you will run init() code inside each
+        // of your widgets inside your workspace JSFiddle rather than here
+    }
+);</div>
+        <button id="com-chilipeppr-widget-editbootscript-submitBtn" class="btn btn-primary pull-right">Save Changes</button>
+    </form>
+</div>
 </body>
 
 </html>

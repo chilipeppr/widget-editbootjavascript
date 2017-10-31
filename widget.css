@@ -1,10 +1,8 @@
 /* CSS for ChiliPeppr Widget */
 
-#com-chilipeppr-widget-template {
-   
+.modal-body #com-chilipeppr-widget-editbootscript-body {
+    padding:0;
 }
-
-#com-chilipeppr-widget-template .nav-tabs>li>a {
-    padding: 2px 6px;
+#com-chilipeppr-widget-editbootscript-body .alert {
+    margin-top:0;
 }
-
