@@ -62,8 +62,10 @@ cpdefine('inline:com-chilipeppr-widget-editbootscript', ['chilipeppr_ready'], fu
     return {
 
         id: 'com-chilipeppr-widget-editbootscript',
-        url: "http://fiddle.jshell.net/chilipeppr/uNALR/show/light/",
-        fiddleurl: "http://jsfiddle.net/chilipeppr/uNALR/",
+        url: "(auto fill by runme.js)",       // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
+        fiddleurl: "(auto fill by runme.js)", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
+        githuburl: "(auto fill by runme.js)", // The backing github repo
+        testurl: "(auto fill by runme.js)",   // The standalone working widget so can view it working by itself
         name: "Widget / Edit Boot Javascript",
         desc: "This widget lets you define your base Javascript that gets executed when your URL is entered. The root panel is loaded first by ChiliPeppr and then you can load your own content in the body area. Your code is only executed once the root panel is loaded.",
         publish: [''],
